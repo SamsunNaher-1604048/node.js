@@ -1,0 +1,19 @@
+{
+  "name": "lesson4",
+  "version": "1.0.0",
+  "description": "this is npm testing projec",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "external",
+    "module"
+  ],
+  "author": "Samsun naher",
+  "license": "ISC",
+  "dependencies": {
+    "random-fruits-name": "^1.9.5"
+  }
+}
