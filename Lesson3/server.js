@@ -2,7 +2,10 @@ const http=require('http');
 const port=4000;
 const hostname='127.0.0.1'
 const myServer=http.createServer((req,res)=>{
-    res.end("hello i am your frist server")
+    //set status code
+    res.writeHead(202,{'content-type':'plan text'})
+    res.write('hello i am nishi')
+    res.end()
 
 });
 myServer.listen(port,hostname,()=>{
