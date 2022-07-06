@@ -4,20 +4,20 @@ const port = 3000;
 const bodyParser=require('body-parser');
 
 //request with query parameter.
-// app.get("/",(req,res)=>{
-//    id =req.query.id;
-//    res.send(`student id is=${id}`)
-// })
+app.get("/",(req,res)=>{
+    const id =req.query.id;
+    res.send(`student id is=${id}`)
+})
 
 //request with route parameter
 
-// app.get("/userid/:id/userage/:age",(req,res)=>{
-//    const id =req.params.id;
-//    const age=req.params.age;
+ app.get("/userid/:id/userage/:age",(req,res)=>{
+   const id =req.params.id;
+   const age=req.params.age;
 
-//    res.send(`student id= ${id},age= ${age}`)
+   res.send(`student id= ${id},age= ${age}`)
 
-// })
+ })
 
 
 //request with header
@@ -29,10 +29,15 @@ const bodyParser=require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.post("/",(req,res)=>{
-    const name=req.body.name;
-    res.send(`welcom ${name}`);
+app.post("/register",(req,res)=>{
+    const fullname=req.body.fullname
+    res.send(`welcome:${fullname}`)
 
+})
+
+
+app.get("/register",(req,res)=>{
+    res.sendFile(__dirname + '/index.html')
 })
 app.listen(port,()=>{
     console.log(`this server is runing at http://localhost:${port}`)
